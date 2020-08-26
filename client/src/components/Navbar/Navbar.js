@@ -48,10 +48,4 @@ const Navibar = () => {
   );
 };
 
-{
-
-}
-// Modal Component
-// Login Form
-
 export default Navibar;
