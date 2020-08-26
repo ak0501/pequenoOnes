@@ -18,15 +18,13 @@ require("./config/passport")(passport);
 //   )
 //   .then(() => console.log('MongoDB Connected'))
 //   .catch(err => console.log(err));
-
-mongoose
-  .connect("mongodb://localhost:27017/kidsdb", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => console.log("MongoDB Connected"))
-  .catch((err) => console.log(err));
-
+// mongoose
+//   .connect("mongodb://localhost:27017/kidsdb", {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//   })
+  // .then(() => console.log("MongoDB Connected"))
+  // .catch((err) => console.log(err));
 // Express body parser
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -34,13 +32,6 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-// Send every request to the React app
-// Define any API routes before this runs
-// app.get("*", function (req, res) {
-//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
-// });
-
-// Express session
 app.use(
   session({
     secret: "secret",
@@ -48,14 +39,11 @@ app.use(
     saveUninitialized: true,
   })
 );
-
 // Passport middleware
 app.use(passport.initialize());
 app.use(passport.session());
-
 // Connect flash
 app.use(flash());
-
 // Global variables
 app.use(function (req, res, next) {
   res.locals.success_msg = req.flash("success_msg");
@@ -63,9 +51,7 @@ app.use(function (req, res, next) {
   res.locals.error = req.flash("error");
   next();
 });
-
 // Routes
 app.use("/users", require("./routes/users.js"));
 app.use("/api", apiRoutes);
-
 app.listen(PORT, console.log(`Server started on port ${PORT}`));
