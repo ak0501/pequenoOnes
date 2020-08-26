@@ -39,7 +39,6 @@
     "react-icons": "^3.11.0"
   },
   "devDependencies": {
-    "nodemon": "^1.19.4",
-    "proxy": "http://localhost:3000"
+    "nodemon": "^1.19.4"
   }
 }
