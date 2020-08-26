@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import TaskList from "./TaskList";
 import axios from "axios";
-import { Button, Modal, ModalHeader, ModalBody } from "reactstrap";
-import { FaPlus, FaMinus } from "react-icons/fa";
-
+import { FaPlus } from "react-icons/fa";
 class Form extends React.Component {
   state = {
     currentActivity: "",
@@ -12,16 +10,10 @@ class Form extends React.Component {
     note: "",
     date: "",
   };
-
   handleChange = (e) => {
-    // if (["activities", "notes"].includes(e.target.name)) {
-    //   let activities = [...this.state.activities];
-    //   activities[e.target.dataset.id][e.target.name] = e.target.value;
-    // } else {
     this.setState({ currentActivity: e.target.value });
     // }
   };
-
   addNewRow = (e) => {
     this.setState((prevState) => ({
       activityCount: [...prevState.activityCount, 1],
@@ -33,17 +25,13 @@ class Form extends React.Component {
       }));
     }
   };
-
   handleSubmit = (e) => {
     e.preventDefault();
-
     console.log("CHILD ID: ", this.props);
-
     const { activities, note, currentActivity } = this.state;
     const activityArray = activities;
     activityArray.push(currentActivity);
     console.log(activityArray.join(", "));
-
     axios
       .post(`/api/report/${this.props.id}`, {
         activities: activityArray.join(", "),
@@ -63,7 +51,6 @@ class Form extends React.Component {
       activities: this.state.activities.filter((r) => r !== record),
     });
   }
-
   render() {
     let { activityCount } = this.state;
     return (

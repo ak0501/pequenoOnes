@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Modal, Button, ListGroup } from "react-bootstrap";
-import { FaPlus, FaReadme } from "react-icons/fa";
+import { FaReadme } from "react-icons/fa";
 
 function ParentReport() {
   const [show, setShow] = useState(false);

@@ -23,8 +23,8 @@ require("./config/passport")(passport);
 //     useNewUrlParser: true,
 //     useUnifiedTopology: true,
 //   })
-  // .then(() => console.log("MongoDB Connected"))
-  // .catch((err) => console.log(err));
+// .then(() => console.log("MongoDB Connected"))
+// .catch((err) => console.log(err));
 // Express body parser
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

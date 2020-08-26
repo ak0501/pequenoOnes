@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Button, Modal, ModalHeader, ModalBody } from "reactstrap";
 import { Form, Col } from "react-bootstrap";
 import axios from "axios";
-var dateFormat = require("dateformat");
-var now = new Date();
 
 const ModalExample = (props) => {
   const { buttonLabel, className } = props;
@@ -38,7 +36,6 @@ const ModalExample = (props) => {
       parent1_id,
       parent2,
       notes,
-      // reports: [{ date: dateFormat.now, type: "", comment: "" }],
     });
   };
 
@@ -77,13 +74,7 @@ const ModalExample = (props) => {
 
             <Form.Group controlId="exampleForm.ControlTextarea1">
               <Form.Label>Parent 1</Form.Label>
-              {/* <Form.Control
-                onChange={(e) => {
-                  setParent1(e.target.value);
-                }}
-                as="textarea"
-                rows="3"
-              /> */}
+
               <Form.Control
                 as="select"
                 onChange={(e) => {
@@ -123,7 +114,7 @@ const ModalExample = (props) => {
                 }}
               />
             </Form.Group>
-            {/* This is where I shoud me able to save it into our db */}
+
             <Button onClick={handleSubmit} variant="primary" type="submit">
               Submit
             </Button>

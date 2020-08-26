@@ -21,18 +21,8 @@ function Activities(props) {
       >
         <Modal.Header closeButton>
           <Modal.Title></Modal.Title>
-          <Form id={props.id}/>
+          <Form id={props.id} />
         </Modal.Header>
-        {/* <Modal.Body>
-          I will not close if you click outside me. Don't even try to press
-          escape key.
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary">Save</Button>
-        </Modal.Footer> */}
       </Modal>
     </>
   );

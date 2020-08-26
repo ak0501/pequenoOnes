@@ -7,7 +7,6 @@ import { BrowserRouter, Route } from "react-router-dom";
 import Home from "./Pages/Home";
 import TeacherPortal from "./Pages/TeacherPortal";
 import ParentPortal from "./Pages/ParentPortal";
-import Activities from "./Pages/Activities";
 
 function App() {
   return (
