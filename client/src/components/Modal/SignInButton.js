@@ -2,8 +2,8 @@
 
 import React, { useState } from "react";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
-import Signup from "../LogIn/Signup.js";
-import LoginForm from "../LogIn/Login.js";
+import Signup from "../LogIn/SignupForm.js";
+import LoginForm from "../LogIn/LoginForm.js";
 
 const SignIn = (props) => {
   const { className } = props;
@@ -24,7 +24,7 @@ const SignIn = (props) => {
 
   return (
     <div>
-      <Button color="danger" onClick={toggle}>
+      <Button color="" onClick={toggle}>
         {"SignIn"}
       </Button>
       <Modal isOpen={modal} toggle={toggle} className={className}>
@@ -46,9 +46,6 @@ const SignIn = (props) => {
           <Button color="success" onClick={toggleNested}>
             SignUp
           </Button>
-          {/* <Button color="primary" onClick={toggle}>
-            Do Something
-          </Button>{" "} */}
         </ModalFooter>
       </Modal>
     </div>

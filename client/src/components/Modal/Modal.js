@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 // import "./styles.css";
 import "bootstrap/dist/css/bootstrap.css";
-import axios from "axios";
+// import axios from "axios";
 
 const LoginForm = ({ onSubmit }) => {
   const [email, setEmail] = useState("");

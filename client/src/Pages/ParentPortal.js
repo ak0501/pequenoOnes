@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import ParentReport from "../components/Modal/ParentReport";
-import { Card, Button, CardImg, CardTitle, CardBody } from "reactstrap";
-import { FaReadme } from "react-icons/fa";
+import { Card, CardImg, CardTitle, CardBody } from "reactstrap";
+
 
 export default class ParentPortal extends Component {
   state = {

@@ -20,12 +20,12 @@ const ModalExample = (props) => {
   const [parent2, setParent2] = useState("");
   const [notes, setNotes] = useState("");
   const [parent1_id, setParent1_id] = useState("");
-  const [reports, setReports] = useState({
-    id: "",
-    date: "",
-    type: "",
-    comment: "",
-  });
+  // const [reports, setReports] = useState({
+  //   id: "",
+  //   date: "",
+  //   type: "",
+  //   comment: "",
+  // });
   const toggle = () => setModal(!modal);
 
   let handleSubmit = () => {
@@ -41,7 +41,7 @@ const ModalExample = (props) => {
 
   return (
     <div>
-      <Button color="danger" onClick={toggle}>
+      <Button color="" onClick={toggle}>
         Create
       </Button>
       <Modal isOpen={modal} toggle={toggle} className={className}>

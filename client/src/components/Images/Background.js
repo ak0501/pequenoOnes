@@ -1,7 +1,12 @@
 import React from "react";
 import "./Background.css";
+import Navbar from "../../components/Navbar/Navbar";
 
 const BackgroundImagePage = () => {
-  return <div className="bg" />;
+  return (
+    <div className="bg">
+      <Navbar></Navbar>
+    </div>
+  );
 };
 export default BackgroundImagePage;

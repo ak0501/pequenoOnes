@@ -1,21 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
-// import LoginForm from "../LogIn/Login.js";
-// import Signup from "../LogIn/Signup.js";
-import SignIn from "../Modal/SignIn";
-
+import SignIn from "../Modal/SignInButton";
 import { Link } from "react-router-dom";
-import CreateChild from "../Modal/CreateChild";
-
-// import Modaal from "../Modal/Modal";
-
-// make a new component
-
+import CreateChild from "../Modal/CreateChildButton";
 const Navibar = () => {
+  // const [parentPage, setParentPage] = useState(false);
+  // const [teacherPage, setTeacherPage] = useState(false);
+  // const showTabs = () => {
   return (
     <>
-      <Navbar sideClass="navTransparent" bg="light" variant="light">
+      <Navbar bg="#11ffee00" variant="light">
         <Navbar.Brand href="#home">LilOnes</Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Link as={Link} to="/">
@@ -39,7 +34,6 @@ const Navibar = () => {
         </Nav>
         {/* TODO:On teacher portal hide all buttons and show create child
             if parent go to parent portal  */}
-
         <SignIn>}</SignIn>
         <span>{""}</span>
         <CreateChild></CreateChild>
@@ -47,5 +41,4 @@ const Navibar = () => {
     </>
   );
 };
-
 export default Navibar;
