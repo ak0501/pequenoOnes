@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 // import * as yup from 'yup';
 const LoginForm = () => {
   const { handleSubmit, register, errors } = useForm();
-  console.log(errors, {})
+  // console.log(errors, {})
   const onSubmit = (values) => console.log(values);
 
 

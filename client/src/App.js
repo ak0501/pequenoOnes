@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./components/Images/Background.css";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./Pages/Home";
 import TeacherPortal from "./Pages/TeacherPortal";
 import ParentPortal from "./Pages/ParentPortal";
+import { firebaseAuth } from './provider/AuthProvider'
+
 function App() {
+  const { handleSignup } = useContext(firebaseAuth)
+  // console.log(handleSignup);
   return (
     <div>
       <BrowserRouter>
