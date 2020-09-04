@@ -18,19 +18,6 @@ export const authMethods = {
             });
     }
 
-    // signin: (email, password) => {
-    //     firebase.auth().signInWithEmailAndPassword(email, password)
-    //     // Handle Errors here.
-    //     var errorCode = error.code;
-    //     var errorMessage = error.message;
-    //     // ...
-    // },
-
-
-    // signout: (email, password) => {
-
-
-    // },
 
 };
 
