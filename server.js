@@ -5,11 +5,11 @@ const flash = require("connect-flash");
 const session = require("express-session");
 const app = express();
 const PORT = process.env.PORT || 3001;
-const db = require("./config/keys").mongoURI;
+// const db = require("./config/keys").mongoURI;
 const apiRoutes = require("./routes/apiRoutes");
 const path = require("path");
-// Passport Config
-require("./config/passport")(passport);
+
+
 
 mongoose
   .connect("mongodb://localhost:27017/kidsdb", {

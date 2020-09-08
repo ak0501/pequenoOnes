@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import StuCard from "../components/Card/Card";
+import StuCard from "../Card/Card";
 import axios from "axios";
 
 const TeacherPortal = () => {

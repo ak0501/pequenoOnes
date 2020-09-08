@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Navbar } from "react-bootstrap";
-import SignIn from "../LogIn/SignIn";
+import { Navbar,Nav } from "react-bootstrap";
+
 
 const Navigation = () => {
   const [parentPage, setParentPage] = useState(false);
@@ -12,8 +12,22 @@ const Navigation = () => {
   }
   return (
     <>
-      <Navbar bg="#11ffee00" variant="light">
-        <SignIn></SignIn>
+      <Navbar bg="dark" variant="dark">
+        <Navbar.Brand href="#home">
+          <img
+            alt=""
+            src="/logo.svg"
+            width="30"
+            height="30"
+            className="d-inline-block align-top"
+          />{' '}
+      React Bootstrap
+    </Navbar.Brand>
+        <Nav className="mr-auto">
+          <Nav.Link href="#home">Home</Nav.Link>
+          <Nav.Link href="#features">Features</Nav.Link>
+          <Nav.Link href="#pricing">Pricing</Nav.Link>
+        </Nav>
       </Navbar>
     </>
   );

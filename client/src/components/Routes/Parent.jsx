@@ -1,15 +1,16 @@
 import React, { Component } from "react";
 import axios from "axios";
-import ParentReport from "../components/Modal/ParentReport";
+import ParentReport from "../Modal/ParentReport";
 import { Card, CardImg, CardTitle, CardBody } from "reactstrap";
 
-
+// change into functional component
 export default class ParentPortal extends Component {
   state = {
     data: {},
     error: "",
   };
 
+  // can use useEffect
   componentDidMount() {
     axios
       .get(`/users/login`)
