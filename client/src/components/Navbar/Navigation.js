@@ -8,7 +8,8 @@ import { FaGalacticSenate } from "react-icons/fa";
 const Navigation = () => {
   const [parentPage, setParentPage] = useState(false);
   const [teacherPage, setTeacherPage] = useState(false);
-  const showTabs = () => {
+  
+  const Navigation= () => {
       setParentPage(true);
      
   }

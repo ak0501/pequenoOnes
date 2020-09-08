@@ -3,21 +3,15 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./components/Images/Background.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Home from "./Pages/Home";
-import TeacherPortal from "./Pages/TeacherPortal";
-import ParentPortal from "./Pages/ParentPortal";
-import { firebaseAuth } from './provider/AuthProvider'
 
 function App() {
-  const { handleSignup } = useContext(firebaseAuth)
-  // console.log(handleSignup);
+
   return (
     <div>
       <BrowserRouter>
         <Route exact path="/" component={Home} />
         <Route exact path="/teacherPortal" component={TeacherPortal} />
         <Route exact path="/parentPortal" component={ParentPortal} />
-        {/* <Route exact path="/activities" component={Activities} /> */}
       </BrowserRouter>
     </div>
   );

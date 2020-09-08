@@ -3,7 +3,7 @@ import 'firebase/auth';
 import 'firebase/app';
 
 
-var firebaseConfig = {
+var fbCredentials = {
     apiKey: process.env.REACT_APP_API_KEY,
     authDomain: process.env.REACT_APP_AUTHDOMAIN,
     databaseURL: process.env.REACT_APP_BASEURL,
@@ -14,8 +14,8 @@ var firebaseConfig = {
     measurementId: process.env.REACT_APP_MEASUREMENT_ID
 };
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(fbCredentials);
 firebase.analytics();
 firebase.auth();
 
-export default firebaseConfig;
+export default fbCredentials;
