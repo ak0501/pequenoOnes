@@ -1,9 +1,9 @@
-import firebase from "firebase";
+import * as firebase from "firebase";
 import 'firebase/auth';
 import 'firebase/app';
 
 
-var fbCredentials = {
+var FbCredentials = firebase.initializeApp({
     apiKey: process.env.REACT_APP_API_KEY,
     authDomain: process.env.REACT_APP_AUTHDOMAIN,
     databaseURL: process.env.REACT_APP_BASEURL,
@@ -12,10 +12,10 @@ var fbCredentials = {
     messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
     appId: process.env.REACT_APP_APP_ID,
     measurementId: process.env.REACT_APP_MEASUREMENT_ID
-};
+});
 // Initialize Firebase
-firebase.initializeApp(fbCredentials);
+
 firebase.analytics();
 firebase.auth();
 
-export default fbCredentials;
+export default FbCredentials;
