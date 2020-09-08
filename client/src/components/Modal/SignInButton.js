@@ -2,11 +2,11 @@
 
 import React, { useState } from "react";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
-import SignUp from "../LogIn/SignUp.js";
-import LoginForm from "../LogIn/LoginForm.js";
-import Login from "../LogIn/Login.jsx";
+// import SignUp from "../LogIn/SignUp.js";
 
-const SignIn = (props) => {
+import SignIn from "../LogIn/SignIn.jsx";
+
+const SignInButton = (props) => {
   const { className } = props;
 
   const [modal, setModal] = useState(false);
@@ -31,7 +31,7 @@ const SignIn = (props) => {
       <Modal isOpen={modal} toggle={toggle} className={className}>
         <ModalHeader toggle={toggle}>LogIn Form</ModalHeader>
         <ModalBody>
-         <Login></Login>
+          {/* <SignIn /> */}
           <Modal
             isOpen={nestedModal}
             toggle={toggleNested}
@@ -39,7 +39,7 @@ const SignIn = (props) => {
           >
             <ModalHeader>SignUp</ModalHeader>
             <ModalBody>
-              <SignUp></SignUp>
+              {/* <SignUp></SignUp> */}
             </ModalBody>
           </Modal>
         </ModalBody>
@@ -53,4 +53,4 @@ const SignIn = (props) => {
   );
 };
 
-export default SignIn;
+export default SignInButton;

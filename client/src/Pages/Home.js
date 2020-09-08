@@ -3,7 +3,7 @@ import BackgroundImagePage from "../components/Images/Background.js";
 const Home = () => {
   return (
     <div>
-      <BackgroundImagePage />
+      <img src={"lilOnes.png"} alt="background Image"/>
     </div>
   );
 };
