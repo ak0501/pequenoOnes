@@ -4,8 +4,9 @@ import Navigation from "../Navbar/Navigation";
 
 const Home = () => {
   return (
-    <div className=".bg">
+    <div>
       <Navigation />
+      
     </div>
   );
 };

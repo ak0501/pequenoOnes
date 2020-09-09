@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import ParentReport from "../Modal/ParentReport";
 import { Card, CardImg, CardTitle, CardBody } from "reactstrap";
+import FbCredentials from "../Firebase/FbCredentials";
 
 // change into functional component
 export default class ParentPortal extends Component {
@@ -41,12 +42,12 @@ export default class ParentPortal extends Component {
             />
             <CardBody className="text-center">
               <CardTitle>{"Student Name"}</CardTitle>
-             
-                  <ParentReport></ParentReport>
-              
+
+              <ParentReport></ParentReport>
             </CardBody>
           </Card>
         )}
+        <button onClick={() => FbCredentials.auth().signOut()}>Sign out</button>
       </>
     );
   }

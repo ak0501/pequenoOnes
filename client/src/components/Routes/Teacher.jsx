@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import StuCard from "../Card/Card";
 import axios from "axios";
+import app from "../Firebase/FbCredentials";
+
 
 const TeacherPortal = () => {
   const [students, setStudents] = useState([]);
@@ -12,6 +14,7 @@ const TeacherPortal = () => {
   }, []);
   return (
     <div className="container-fluid d-flex justify-content-center pr-3">
+      {/* <button onClick={() => app.auth().signOut()}>Sign out</button> */}
       {students.map((student) => {
         return (
           <StuCard

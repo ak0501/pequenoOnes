@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useContext } from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -12,7 +12,10 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-
+import FbCredentials from "../Firebase/FbCredentials.js";
+import { AuthContext } from "../Firebase/AuthProvider.js";
+import { Redirect, withRouter } from "react-router-dom";
+import "firebase/auth";
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -25,7 +28,6 @@ function Copyright() {
     </Typography>
   );
 }
-
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(8),
@@ -45,9 +47,31 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(3, 0, 2),
   },
 }));
-
-export default function SignIn() {
+const SignIn = ({ history }) => {
   const classes = useStyles();
+  /* ---------------------------- useCallback hook ---------------------------- */
+  const handleLogin = useCallback(
+    async event => {
+      event.preventDefault();
+      const { email, password } = event.target.elements;
+      try {
+        await FbCredentials.auth().signInWithEmailAndPassword(
+          email.value,
+          password.value
+        );
+        history.push("/");
+      } catch (error) {
+        alert(error);
+      }
+    },
+    [history]
+  );
+  const { currentUser } = useContext(AuthContext);
+  if (currentUser) {
+    /* ------------------ match ID of user to direct to portals ----------------- */
+
+    return <Redirect to="/" />;
+  }
 
   return (
     <Container component="main" maxWidth="xs">
@@ -59,7 +83,7 @@ export default function SignIn() {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} noValidate onSubmit={handleLogin}>
           <TextField
             variant="outlined"
             margin="normal"
@@ -114,4 +138,5 @@ export default function SignIn() {
       </Box>
     </Container>
   );
-}
+};
+export default withRouter(SignIn);
