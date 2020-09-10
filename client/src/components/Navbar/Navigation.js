@@ -1,17 +1,15 @@
 import React from "react";
 import { Navbar, Nav,Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
-import SignUp from '../Routes/SignUp';
-
-
 import { Link } from "react-router-dom";
+import FbCredentials from "../Firebase/FbCredentials";
 
 
 // import Modaal from "../Modal/Modal";
 
 // make a new component
 
-const Navibar = () => {
+const Navigation = () => {
   return (
     <>
       <Navbar sideClass="navTransparent" bg="light" variant="light">
@@ -32,7 +30,7 @@ const Navibar = () => {
           <Nav.Link as={Link} to="#">
             ContactUs
           </Nav.Link>
-          <Nav.Link as={Link} to="/parentPortal">
+          <Nav.Link  Link to="/parentPortal">
             Parent Portal
           </Nav.Link>
          
@@ -46,6 +44,7 @@ const Navibar = () => {
           <Button as={Link} to="/SignUp"> 
             SignUp
           </Button>
+          <Button onClick={() => FbCredentials.auth().signOut()}>Sign out</Button>
         </Nav>
         {/* TODO:On teacher portal hide all buttons and show create child
             if parent go to parent portal  */}
@@ -57,10 +56,4 @@ const Navibar = () => {
   );
 };
 
-{
-
-}
-// Modal Component
-// Login Form
-
-export default Navibar;
+export default Navigation;
