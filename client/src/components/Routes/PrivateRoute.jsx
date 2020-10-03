@@ -4,10 +4,11 @@ import { AuthProvider } from "../Firebase/AuthProvider";
 
 const PrivateRoute = ({ component: RouteComponent, ...rest }) => {
   const { currentUser } = useContext(AuthProvider);
+  console.log(currentUser);
   return (
     <Route
       {...rest}
-      render={(routeProps) =>
+      render={routeProps =>
         !!currentUser ? (
           <RouteComponent {...routeProps} />
         ) : (

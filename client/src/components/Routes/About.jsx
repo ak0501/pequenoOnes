@@ -1,9 +1,13 @@
 import React from "react";
+import Navigation from "../Navbar/Navigation";
+import "../Images/Background.css";
+
 const About = () => {
   return (
-    <div>
-      <h2>About</h2>
-    </div>
+    <div className="bg">
+     <Navigation/>
+    
+  </div>
   )
 };
 export default About;
