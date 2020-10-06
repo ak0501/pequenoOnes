@@ -24,10 +24,5 @@ export const MenuItems = [
     id: "signin",
     cName: "nav-text"
   },
-  {
-    name: "SignOut",
-    route: "/",
-    id: "signup",
-    cName: "nav-text"
-  },
+  
 ];

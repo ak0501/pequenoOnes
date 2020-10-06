@@ -1,0 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300&display=swap");
+
+.nav-text,
+.sobutton {
+  font-family: "Sansita Swashed", cursive;
+  display: inline-flex;
+  font-size: 1.5em;
+  color: black;
+}

@@ -4,8 +4,15 @@ import "bootstrap/dist/css/bootstrap.css";
 import { Link } from "react-router-dom";
 import FbCredentials from "../Firebase/FbCredentials";
 import { MenuItems } from "./MenuItems";
+import "./Navigation.css";
+import SignOut from "../Routes/SignOut";
 
 const Navigation = () => {
+
+  // let routeFunc = (route) => {
+  //  return ((route !== '/SignOut')? route : FbCredentials.auth().signOut())
+  // };
+
   return (
     <>
       <Navbar variant="light">
@@ -16,30 +23,24 @@ const Navigation = () => {
             height="30"
             className="d-inline-block align-top"
             alt="lilOnes"
-            
           />
         </Navbar.Brand>
-        <Nav className="mr-auto" paddingLeft="100px">
-          <Nav.Item>
+        {/* <Nav className="mr-auto"> */}
+          <Button variant="link">
             {MenuItems.map((item, index) => {
               return (
                 <div
-                  style={{ display: "inline-block" }}
                   key={index}
                   className={item.cName}
                 >
-                  <Nav.Link href={item.route}>{item.name}</Nav.Link>
+                  <Button variant="link" href={item.route}>{item.name} </Button>
                 </div>
               );
+              
             })}
-          </Nav.Item>
-
-          {/* 
-          
-          <Button onClick={() => FbCredentials.auth().signOut()}>
-            Sign out
-          </Button> */}
-        </Nav>
+            <SignOut></SignOut>
+          </Button>
+        {/* </Nav> */}
       </Navbar>
     </>
   );
