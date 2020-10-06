@@ -1,5 +1,4 @@
-import React from "react";
-import {AiOutlineLogin} from "react-icons/ai";
+
 export const MenuItems = [
   {
     name: "About",
@@ -21,14 +20,14 @@ export const MenuItems = [
   },
   {
     name: "SignIn",
-    route: "/signin",
+    route: "/login",
     id: "signin",
     cName: "nav-text"
   },
   {
     name: "SignOut",
-    route: "/signout",
-    id: "signout",
+    route: "/",
+    id: "signup",
     cName: "nav-text"
   },
 ];

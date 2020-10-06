@@ -34,35 +34,11 @@ const Navigation = () => {
             })}
           </Nav.Item>
 
-          {/* <Nav.Link as={Link} to="/">
-            Home
-          </Nav.Link>
-          <Nav.Link as={Link} to="/about">
-            About
-          </Nav.Link>
-          <Nav.Link as={Link} to="#">
-            ContactUs
-          </Nav.Link>
-          <Nav.Link Link to="/parentPortal">
-            Parent Portal
-          </Nav.Link>
-
-          <Nav.Link as={Link} to="/teacherPortal">
-            Teacher Portal
-          </Nav.Link>
-          <Button as={Link} to="/login">
-            LogIn
-          </Button>
-
-          <Button as={Link} to="/SignUp">
-            SignUp
-          </Button>
+          {/* 
+          
           <Button onClick={() => FbCredentials.auth().signOut()}>
             Sign out
           </Button> */}
-          {/* </Nav> */}
-          {/* TODO:On teacher portal hide all buttons and show create child
-            if parent go to parent portal  */}
         </Nav>
       </Navbar>
     </>
