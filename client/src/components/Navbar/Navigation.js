@@ -1,18 +1,14 @@
 import React from "react";
-import { Navbar, Nav, Button } from "react-bootstrap";
+import { Navbar, Nav, Button, eventKey } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import { Link } from "react-router-dom";
 import FbCredentials from "../Firebase/FbCredentials";
-import MenuItems from "./menu"
-
-// import Modaal from "../Modal/Modal";
-
-// make a new component
+import { MenuItems } from "./MenuItems";
 
 const Navigation = () => {
   return (
     <>
-      <Navbar sideClass="navTransparent" bg="light" variant="light">
+      <Navbar variant="light">
         <Navbar.Brand href="#">
           <img
             src="client\src\components\Images\lilOnes.png"
@@ -20,27 +16,25 @@ const Navigation = () => {
             height="30"
             className="d-inline-block align-top"
             alt="lilOnes"
+            
           />
         </Navbar.Brand>
-        <Nav className="mr-auto">
+        <Nav className="mr-auto" paddingLeft="100px">
+          <Nav.Item>
+            {MenuItems.map((item, index) => {
+              return (
+                <div
+                  style={{ display: "inline-block" }}
+                  key={index}
+                  className={item.cName}
+                >
+                  <Nav.Link href={item.route}>{item.name}</Nav.Link>
+                </div>
+              );
+            })}
+          </Nav.Item>
 
-/* ----------------------------------- ... ---------------------------------- */
-
-          <Nav.Link>
-            {MenuItems.map(item,index)=>{
-              return(
-                <li key={index} className={item.cName}>
-                  <Link to ={item.path}>
-              <span>{item.title}</span>
-                  </Link>
-                </li>
-              )
-            }};
-          </Nav.Link>
-
-/* ----------------------------------- .. ----------------------------------- */
-
-          <Nav.Link as={Link} to="/">
+          {/* <Nav.Link as={Link} to="/">
             Home
           </Nav.Link>
           <Nav.Link as={Link} to="/about">
@@ -65,13 +59,13 @@ const Navigation = () => {
           </Button>
           <Button onClick={() => FbCredentials.auth().signOut()}>
             Sign out
-          </Button>
-        </Nav>
-        {/* TODO:On teacher portal hide all buttons and show create child
+          </Button> */}
+          {/* </Nav> */}
+          {/* TODO:On teacher portal hide all buttons and show create child
             if parent go to parent portal  */}
+        </Nav>
       </Navbar>
     </>
   );
 };
-
 export default Navigation;
