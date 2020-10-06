@@ -1,9 +1,9 @@
 import React from "react";
-import { Navbar, Nav,Button } from "react-bootstrap";
+import { Navbar, Nav, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import { Link } from "react-router-dom";
 import FbCredentials from "../Firebase/FbCredentials";
-
+import MenuItems from "./menu"
 
 // import Modaal from "../Modal/Modal";
 
@@ -13,14 +13,33 @@ const Navigation = () => {
   return (
     <>
       <Navbar sideClass="navTransparent" bg="light" variant="light">
-        <Navbar.Brand href="#"><img
-          src="client\src\components\Images\lilOnes.png"
-          width="30"
-          height="30"
-          className="d-inline-block align-top"
-          alt="lilOnes"
-        /></Navbar.Brand>
+        <Navbar.Brand href="#">
+          <img
+            src="client\src\components\Images\lilOnes.png"
+            width="30"
+            height="30"
+            className="d-inline-block align-top"
+            alt="lilOnes"
+          />
+        </Navbar.Brand>
         <Nav className="mr-auto">
+
+/* ----------------------------------- ... ---------------------------------- */
+
+          <Nav.Link>
+            {MenuItems.map(item,index)=>{
+              return(
+                <li key={index} className={item.cName}>
+                  <Link to ={item.path}>
+              <span>{item.title}</span>
+                  </Link>
+                </li>
+              )
+            }};
+          </Nav.Link>
+
+/* ----------------------------------- .. ----------------------------------- */
+
           <Nav.Link as={Link} to="/">
             Home
           </Nav.Link>
@@ -30,27 +49,26 @@ const Navigation = () => {
           <Nav.Link as={Link} to="#">
             ContactUs
           </Nav.Link>
-          <Nav.Link  Link to="/parentPortal">
+          <Nav.Link Link to="/parentPortal">
             Parent Portal
           </Nav.Link>
-         
+
           <Nav.Link as={Link} to="/teacherPortal">
             Teacher Portal
           </Nav.Link>
-          <Button as={Link} to="/login"> 
+          <Button as={Link} to="/login">
             LogIn
           </Button>
-         
-          <Button as={Link} to="/SignUp"> 
+
+          <Button as={Link} to="/SignUp">
             SignUp
           </Button>
-          <Button onClick={() => FbCredentials.auth().signOut()}>Sign out</Button>
+          <Button onClick={() => FbCredentials.auth().signOut()}>
+            Sign out
+          </Button>
         </Nav>
         {/* TODO:On teacher portal hide all buttons and show create child
             if parent go to parent portal  */}
-
-        
-
       </Navbar>
     </>
   );
