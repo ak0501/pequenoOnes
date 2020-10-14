@@ -5,7 +5,6 @@ import axios from "axios";
 
 const ModalExample = (props) => {
   const { buttonLabel, className } = props;
-  const [parents, setParents] = useState([]);
   useEffect(() => {
     axios.get("/users/parents").then((response) => {
       console.log(response);
@@ -16,8 +15,7 @@ const ModalExample = (props) => {
   const [modal, setModal] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [parent1, setParent1] = useState("");
-  const [parent2, setParent2] = useState("");
+  const [parent, setParent] = useState("")
   const [notes, setNotes] = useState("");
   const [parent1_id, setParent1_id] = useState("");
   // const [reports, setReports] = useState({

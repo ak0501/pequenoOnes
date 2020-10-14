@@ -1,20 +1,17 @@
 import React, { useEffect, useState } from "react";
 import StuCard from "../Card/Card";
-import axios from "axios";
-import app from "../Firebase/FbCredentials";
+
 
 
 const TeacherPortal = () => {
-  const [students, setStudents] = useState([]);
-  useEffect(() => {
-    axios.get("/api/child").then((response) => {
-      console.log(response);
-      setStudents(response.data);
-    });
-  }, []);
+  const data ={
+    fName:"avi",
+    lName:"khanal"
+  }
+  
+  
   return (
     <div className="container-fluid d-flex justify-content-center pr-3">
-      {/* <button onClick={() => app.auth().signOut()}>Sign out</button> */}
       {students.map((student) => {
         return (
           <StuCard

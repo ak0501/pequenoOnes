@@ -9,7 +9,7 @@ import Home from './components/Routes/Home';
 import Teacher from './components/Routes/Teacher';
 import Parent from './components/Routes/Parent';
 import { AuthProvider } from "./components/Firebase/AuthProvider";
-import PrivateRoute from "./components/Routes/PrivateRoute";
+
 
 function App() {
 
@@ -21,7 +21,7 @@ function App() {
           <Route exact path ="/about" component={About}/>
           <Route exact path="/login" component={SignIn} />
           <Route exact path="/signup" component={SignUp} />
-          <PrivateRoute exact path="/teacher" component={Teacher} />
+          <Route exact path="/teacher" component={Teacher} />
           <Route exact path="/parent" component={Parent} />
         </Switch>
       </Router>

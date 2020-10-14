@@ -1,54 +1,34 @@
-import React, { Component } from "react";
-import axios from "axios";
+import React, { useState,useEffect } from "react";
 import ParentReport from "../Modal/ParentReport";
 import { Card, CardImg, CardTitle, CardBody } from "reactstrap";
-import FbCredentials from "../Firebase/FbCredentials";
+import storage from "../Firebase/FbCredentials";
 
 // change into functional component
-export default class ParentPortal extends Component {
-  state = {
-    data: {},
-    error: "",
-  };
-
+const ParentPortal=()=>{
+  const [data,setData]=useState [{}]
   // can use useEffect
-  componentDidMount() {
-    axios
-      .get(`/users/login`)
-      .then((res) => {
-        this.setState({ data: res.data });
-      })
-      .catch((error) => {
-        this.setState({ error });
-      });
-  }
-
-  render() {
+ const useEffect=(() => {
+   const data = storage.ref(`/image/`)
+   return () => {
+    
+   }
+ }, [data])
     return (
       <>
-        {console.log(this.state.data)}
-        {this.state.error !== "" && (
-          <h1>
-            {/* WOAH YOU SHOULD NOT BE HERE. CLICK <a href="/">HERE</a> TO GO BACK
-            TO WHERE YOU SHOULD BE? */}
-          </h1>
-        )}
-        {this.state.data !== {} && (
           <Card text-center style={{ width: "18rem" }}>
             <CardImg
               top
-              src="https://via.placeholder.com/250"
+              src={data}
               alt="Card image cap"
             />
             <CardBody className="text-center">
               <CardTitle>{"Student Name"}</CardTitle>
-
               <ParentReport></ParentReport>
             </CardBody>
           </Card>
-        )}
-        <button onClick={() => FbCredentials.auth().signOut()}>Sign out</button>
+        
       </>
     );
-  }
-}
+  };
+
+  export default ParentPortal;

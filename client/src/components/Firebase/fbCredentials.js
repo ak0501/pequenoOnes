@@ -1,6 +1,7 @@
 import * as firebase from "firebase";
 import 'firebase/auth';
 import 'firebase/app';
+import 'firebase/storage';
 
 
 var FbCredentials = firebase.initializeApp({
@@ -22,7 +23,8 @@ var FbCredentials = firebase.initializeApp({
   measurementId: "G-5S9E1YZBBE",
 });
 // Initialize Firebase
-
+const storage = firebase.storage();
+var database = firebase.database();
 firebase.analytics();
 firebase.auth();
 

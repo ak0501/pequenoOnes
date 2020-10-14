@@ -9,7 +9,7 @@ export const AuthProvider = ({ children }) => {
 
 
     useEffect(() => {
-        FbCredentials.auth().onAuthStateChanged((user) => {
+       FbCredentials.auth().onAuthStateChanged((user) => {
             setCurrentUser(user)
             setPending(false)
         });
